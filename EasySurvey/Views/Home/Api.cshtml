@@ -1,0 +1,176 @@
+﻿@{
+    ViewBag.Title = "Api";
+}
+<style>
+    tr td {
+      padding:10px 10px;
+    }
+</style>
+
+<h2>Api</h2>
+<div>
+    <table border="1">
+        <thead>
+            <tr>
+            <td>
+                接口名称
+            </td>
+            <td>
+                地址
+            </td>
+            <td>
+                参数
+            </td>
+            <td>
+                请求方式
+            </td>
+            <td>
+                返回
+            </td>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>
+                    注册
+                </td>
+                <td>
+                    http://42.96.129.28:866/UserApi/Register
+                </td>
+                <td>
+                    username,password
+                </td>
+                <td>
+                    post
+                </td>
+                <td>
+                    成功：ok
+                    失败：fail
+                    已经存在：exist
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    登陆
+                </td>
+                <td>
+                    http://42.96.129.28:866/UserApi/Login
+                </td>
+                <td>
+                    username,password
+                </td>
+                <td>
+                    post
+                </td>
+                <td>
+                    成功：ok
+                    失败：fail
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                   创建问卷
+                </td>
+                <td>
+                    http://42.96.129.28:866/QuestionnarieApi/Create
+                </td>
+                <td>
+                    questions,userId,title
+                </td>
+                <td>
+                    post
+                </td>
+                <td>
+                    成功：ok
+                    失败：fail
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    得到问卷
+                </td>
+                <td>
+                    http://42.96.129.28:866/QuestionnarieApi/GetQuestionnarie
+                </td>
+                <td>
+                   qid
+                </td>
+                <td>
+                    post
+                </td>
+                <td>
+                   成功：json字符串
+                   失败：noexist
+                </td>
+                <td>
+                    <img src="~/Images/wenjuan.PNG" width="200" height="120" />
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    分页获取问卷
+                </td>
+                <td>
+                    http://42.96.129.28:866/QuestionnarieApi/GetQuestionnaries
+                </td>
+                <td>
+                    page,key
+                </td>
+                <td>
+                    post
+                </td>
+                <td>
+                    成功：json字符串
+                </td>
+                <td>
+                    <img src="~/Images/wenjuanpages.PNG" />
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    用户提交调查
+                </td>
+                <td>
+                    http://42.96.129.28:866/QuestionnarieApi/UserSubmit
+                </td>
+                <td>
+                    uid(用户id),qid(问卷id),content(包含问题答案的Json字符串例如[{Id:1,Answer:2},{Id:2,Answer:1}])
+                </td>
+                <td>
+                    post
+                </td>
+                <td>
+                    成功：ok
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    获取调查统计的信息
+                </td>
+                <td>
+                    http://42.96.129.28:866/QuestionnarieApi/TongJi
+                </td>
+                <td>
+                    qid(问卷id)
+                </td>
+                <td>
+                    post
+                </td>
+                <td>
+                    统计结果json字符串
+                </td>
+                <td>
+                    <img src="~/Images/tongjiresult.PNG" />
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div><a href="/Home/Index">首页</a></div>
+</div>
+
